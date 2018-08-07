@@ -1,0 +1,16 @@
+﻿<Window x:Class="wpf_exam.studentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_exam"
+        mc:Ignorable="d"
+        Title="studentWindow" Height="450" Width="800">
+    <StackPanel>
+        <Button Name="changeTheme" Click="changeTheme_Click" Padding="10" Margin="50,30,50,0">Change Theme</Button>
+        <Button Name="homeworks" Click="homeworks_Click" Padding="10" Margin="50,30,50,0">Homeworks</Button>
+        <Button Name="info" Click="info_Click" Padding="10" Margin="50,30,50,0">Info</Button>
+        <Button Name="exit" Click="exit_Click" Padding="10" Margin="50,30,50,0">Exit</Button>
+    </StackPanel>
+</Window>
+<!--theme homework info exit-->
