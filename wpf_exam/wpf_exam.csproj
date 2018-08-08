@@ -62,10 +62,16 @@
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="Student.cs" />
+    <Compile Include="StudentInfo.xaml.cs">
+      <DependentUpon>StudentInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="studentWindow.xaml.cs">
       <DependentUpon>studentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Teacher.cs" />
+    <Compile Include="TeacherInfo.xaml.cs">
+      <DependentUpon>TeacherInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TeacherWindow.xaml.cs">
       <DependentUpon>TeacherWindow.xaml</DependentUpon>
     </Compile>
@@ -89,7 +95,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="StudentInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="studentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeacherInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,7 +139,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\contact.png" />
+    <Resource Include="contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="badges.PNG" />
+    <Resource Include="coins.PNG" />
+    <Resource Include="crystal.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

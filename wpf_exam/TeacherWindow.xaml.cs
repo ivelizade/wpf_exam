@@ -19,11 +19,13 @@ namespace wpf_exam
     /// </summary>
     public partial class TeacherWindow : Window
     {
+        public static Teacher loggedInTeacher  { get; set; }
         public TeacherWindow()
         {
             InitializeComponent();
+            loggedInTeacher = Login.loggedInTeacher;
         }
-
+        
         private void changeTheme_Click(object sender, RoutedEventArgs e)
         {
 
@@ -37,6 +39,8 @@ namespace wpf_exam
 
         private void teacherInfo_Click(object sender, RoutedEventArgs e)
         {
+            TeacherInfo teacherInfo = new TeacherInfo();
+            teacherInfo.Show();
 
         }
 

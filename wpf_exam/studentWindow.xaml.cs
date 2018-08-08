@@ -36,7 +36,8 @@ namespace wpf_exam
 
         private void info_Click(object sender, RoutedEventArgs e)
         {
-
+            StudentInfo studentInfo = new StudentInfo();
+            studentInfo.Show();
         }
 
         private void exit_Click(object sender, RoutedEventArgs e)

@@ -72,7 +72,7 @@ namespace wpf_exam
                 Phone = "0554880085",
                 Username = "abc",
                 Password = "123",
-                ImagePath = "Photos\boy.ico",
+                ImagePath = @"Icons/contact.png",
                 StudentList = new ObservableCollection<Student> { new Student { Name = "Fatime", Surname = "Mirzeyeva", Email = "mirzeyeva90@mail.ru",
                     Adress = "Baki", Password = "1232132",Username="fatime", Photo = "Photos\\girl.ico", Attendance = 80, GroupName="2721_AZ",
                     HomeWorks = new ObservableCollection<HomeWork>{ new HomeWork { Date=new DateTime(2018,08,20),
@@ -117,7 +117,7 @@ namespace wpf_exam
                 Phone = "0556655085",
                 Username = "eli",
                 Password = "321",
-                ImagePath = "Photos\boy.ico",
+                ImagePath = @"Icons/contact.png",
                 StudentList = new ObservableCollection<Student> { new Student { Name = "asasasa", Surname = "Mirzeyeva", Email = "mirzeyeva90@mail.ru",
                     Adress = "Baki", Password = "1232132", Photo = "Photos\\girl.ico", Attendance = 80, GroupName="2721_AZ",
                     HomeWorks = new ObservableCollection<HomeWork>{ new HomeWork { Date=new DateTime(2018,08,20),
@@ -127,7 +127,8 @@ namespace wpf_exam
             });
 
         }
-
+        public static Teacher loggedInTeacher{ get; set; }
+        public static Student loggedInStudent { get; set; }
         private void login_Click(object sender, RoutedEventArgs e)
         {
             bool sucsess = false;
@@ -135,11 +136,12 @@ namespace wpf_exam
             {
                 foreach (var item in teachers)
                 {
-                    if (item.Username.Equals(usertext.Text)&&item.Password.Equals(passwordtext.Text))
+                    if (item.Username.Equals(usertext.Text)&&item.Password.Equals(passwordtext.Password))
                     {
                         TeacherWindow teacherWindow = new TeacherWindow();
                         teacherWindow.Show();
                         sucsess = true;
+                        loggedInTeacher=item;
                     }
               
                     
@@ -155,7 +157,7 @@ namespace wpf_exam
             {
                 foreach (var item in students)
                 {
-                    if (item.Username.Equals(usertext.Text) && item.Password.Equals(passwordtext.Text))
+                    if (item.Username.Equals(usertext.Text) && item.Password.Equals(passwordtext.Password))
                     {
                         studentWindow studentWindow = new studentWindow();
                         studentWindow.Show();
