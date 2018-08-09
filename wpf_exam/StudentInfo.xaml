@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_exam"
         mc:Ignorable="d"
-        Title="StudentInfo" Height="700" Width="800">
+        Title="StudentInfo" Height="770" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition>
@@ -24,6 +24,9 @@
             <Label Margin="100,0,0,0"  FontSize="18">Performance</Label>
             <Label Margin="100,0,0,0"  FontSize="18">Attendance</Label>
             <Label Margin="100,0,0,0"  FontSize="18">Average Mark</Label>
+            <Label Margin="100,0,0,0"  FontSize="18">Username</Label>
+            <Label Margin="100,0,0,0"  FontSize="18">Password</Label>
+
             <StackPanel Orientation="Horizontal" >
                 <Label Name="crystal" Margin="100,20,0,0" Content="0" FontSize="23"  ></Label>
                 <Image Source="crystal.png" Width="50" Margin="10,20,5,0"/>
@@ -53,7 +56,8 @@
             <TextBox Name="performance" FontSize="18" TextAlignment="Center" Height="34"/>
             <TextBox Name="attendance" FontSize="18" TextAlignment="Center" Height="34"/>
             <TextBox Name="avaragemark" FontSize="18" TextAlignment="Center"  Height="34"/>
-           
+            <TextBox Name="username" FontSize="18" TextAlignment="Center"  Height="34"/>
+            <PasswordBox Name="password" FontSize="18" Height="34"/>
             <Button Name="save" Background="Coral" Click="save_Click" Margin="50,50,50,0" Height="36">Save All</Button>
         </StackPanel>
     </Grid>

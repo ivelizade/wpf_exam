@@ -131,7 +131,7 @@ namespace wpf_exam
         public static Student loggedInStudent { get; set; }
         private void login_Click(object sender, RoutedEventArgs e)
         {
-            bool sucsess = false;
+            bool success = false;
             if (loginAs.SelectedIndex==0)
             {
                 foreach (var item in teachers)
@@ -140,13 +140,13 @@ namespace wpf_exam
                     {
                         TeacherWindow teacherWindow = new TeacherWindow();
                         teacherWindow.Show();
-                        sucsess = true;
+                        success = true;
                         loggedInTeacher=item;
                     }
               
                     
                 }
-                if (!sucsess)
+                if (!success)
                 {
                     MessageBox.Show("Wrong Username or Password");
                 }
@@ -161,12 +161,12 @@ namespace wpf_exam
                     {
                         studentWindow studentWindow = new studentWindow();
                         studentWindow.Show();
-                        sucsess = true;
+                        success = true;
                     }
                    
                     
                 }
-                if (!sucsess)
+                if (!success)
                 {
                     MessageBox.Show("Wrong Email or Password");
                 }

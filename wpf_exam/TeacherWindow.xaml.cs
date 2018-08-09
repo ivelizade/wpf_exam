@@ -46,7 +46,8 @@ namespace wpf_exam
 
         private void students_Click(object sender, RoutedEventArgs e)
         {
-
+            ShowStudents showStudents = new ShowStudents();
+            showStudents.Show();
         }
 
         private void exit_Click(object sender, RoutedEventArgs e)
