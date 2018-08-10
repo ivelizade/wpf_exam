@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,16 +26,15 @@ namespace wpf_exam
             DataContext = this;
             BitmapImage bi3 = new BitmapImage();
             bi3.BeginInit();
-            bi3.UriSource = new Uri("contact.PNG", UriKind.Relative);
+            bi3.UriSource = new Uri(Login.loggedInStudent.Photo, UriKind.Relative);
             bi3.EndInit();
             contact.Stretch = Stretch.Fill;
             contact.Source = bi3;
-
             name.Text = Login.loggedInStudent.Name;
             surname.Text = Login.loggedInStudent.Surname;
-            phone.Text = Login.loggedInTeacher.Age;
-            email.Text = Login.loggedInStudent.Adress;
-            adress.Text = Login.loggedInStudent.Phone;
+            phone.Text = Login.loggedInStudent.Phone;
+            email.Text = Login.loggedInStudent.Email;
+            adress.Text = Login.loggedInStudent.Adress;
             groupname.Text = Login.loggedInStudent.GroupName;
             performance.Text = Login.loggedInStudent.Performance.ToString();
             attendance.Text = Login.loggedInStudent.Attendance.ToString();
@@ -49,12 +49,20 @@ namespace wpf_exam
 
         private void changepicture_Click(object sender, RoutedEventArgs e)
         {
-            BitmapImage bi3 = new BitmapImage();
-            bi3.BeginInit();
-            bi3.UriSource = new Uri(imagepath.Text, UriKind.Relative);
-            bi3.EndInit();
-            contact.Stretch = Stretch.Fill;
-            contact.Source = bi3;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image files (*.png;*.jpeg;*.ico)|*.png;*.jpeg;*.ico";
+            openFileDialog.Multiselect = false;
+            if (openFileDialog.ShowDialog() == true)
+            {
+                BitmapImage bi3 = new BitmapImage();
+                bi3.BeginInit();
+                bi3.UriSource = new Uri(openFileDialog.FileName, UriKind.Relative);
+                bi3.EndInit();
+                contact.Stretch = Stretch.Fill;
+                contact.Source = bi3;
+                Login.loggedInStudent.Photo = openFileDialog.FileName;
+            }
+            
 
            
         }
@@ -63,9 +71,9 @@ namespace wpf_exam
         {
             name.Text = Login.loggedInStudent.Name;
             surname.Text = Login.loggedInStudent.Surname;
-            phone.Text = Login.loggedInTeacher.Age;
-            email.Text = Login.loggedInStudent.Adress;
-            adress.Text = Login.loggedInStudent.Phone;
+            phone.Text = Login.loggedInStudent.Phone;
+            email.Text = Login.loggedInStudent.Email;
+            adress.Text = Login.loggedInStudent.Adress;
             groupname.Text = Login.loggedInStudent.GroupName;
             performance.Text = Login.loggedInStudent.Performance.ToString();
             attendance.Text = Login.loggedInStudent.Attendance.ToString();

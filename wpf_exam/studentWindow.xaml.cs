@@ -24,14 +24,12 @@ namespace wpf_exam
             InitializeComponent();
         }
 
-        private void changeTheme_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+    
 
         private void homeworks_Click(object sender, RoutedEventArgs e)
         {
-
+            ShowHomeworks showHomeworks = new ShowHomeworks();
+            showHomeworks.Show();
         }
 
         private void info_Click(object sender, RoutedEventArgs e)

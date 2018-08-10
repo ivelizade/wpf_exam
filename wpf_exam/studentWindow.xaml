@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="studentWindow" Height="450" Width="800">
     <StackPanel>
-        <Button Name="changeTheme" Click="changeTheme_Click" Padding="10" Margin="50,30,50,0">Change Theme</Button>
         <Button Name="homeworks" Click="homeworks_Click" Padding="10" Margin="50,30,50,0">Homeworks</Button>
         <Button Name="info" Click="info_Click" Padding="10" Margin="50,30,50,0">Info</Button>
         <Button Name="exit" Click="exit_Click" Padding="10" Margin="50,30,50,0">Exit</Button>

@@ -6,51 +6,55 @@
         xmlns:local="clr-namespace:wpf_exam"
         mc:Ignorable="d"
         Title="ShowStudents" Height="450" Width="800">
-    <Grid>
-        <ListView Name="studentListView" >
+
+       
+            <ListView Name="studentListView" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal"></StackPanel>
+                <WrapPanel Orientation="Horizontal"   ></WrapPanel>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
-                <DataTemplate >
-                   <StackPanel Orientation="Vertical" Margin="100">
+            <DataTemplate >
+                <StackPanel>
                         <StackPanel>
                             <Image HorizontalAlignment="Left" Width="60" Height="60"
-                                   Source="{Binding ElementName=studentListView.ItemSource, Path=ImagePath}"/>
-                            <TextBlock FontSize="15" Text="{Binding ElementName=studentListView.ItemSource, Path=Name}"/>
-                            <TextBlock FontSize="15" Text="{Binding ElementName=studentListView.ItemSource, Path=Surname}"/>
+                                   Source="{Binding Photo}"/>
+                            <TextBlock FontSize="15" Text="{Binding Name}"/>
+                            <TextBlock FontSize="15" Text="{Binding Surname}"/>
 
                         </StackPanel>
-                        <StackPanel>
-                            <TextBlock Margin="5" Text="{Binding ElementName=studentListView.ItemSource, Path= Crystal}"  FontSize="15"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="5" Text="{Binding Crystal}"  FontSize="15"/>
 
                             <Image HorizontalAlignment="Left" Margin="5" Width="25" Height="25" Source="C:\Users\vali_py35\source\repos\wpf_exam\wpf_exam\crystal.PNG"/>
-                            <TextBlock Margin="5" Text="{Binding ElementName=studentListView.ItemSource, Path= Coin}"  FontSize="15"/>
+                            <TextBlock Margin="5" Text="{Binding Coin}"  FontSize="15"/>
                             <Image HorizontalAlignment="Left" Width="25" Height="25" Margin="5" Source="coins.PNG"/>
-                            <TextBlock Margin="5" Text="{Binding ElementName=studentListView.ItemSource, Path= Badges}" FontSize="15"/>
+                            <TextBlock Margin="5" Text="{Binding Badges}" FontSize="15"/>
                             <Image HorizontalAlignment="Left" Width="25" Height="25" Margin="5" Source="badges.png"/>
                         </StackPanel>
-                        <StackPanel>
+                 
+                        <StackPanel Orientation="Horizontal">
                             <Label FontSize="15" Content="Performance : "></Label>
-                            <TextBlock FontSize="15" Text="{Binding ElementName=studentListView.ItemSource, Path=Performance}"/>
-                        </StackPanel>
-                        <StackPanel>
+                            <TextBlock FontSize="15" Text="{Binding Performance}"/>
+                        </StackPanel >
+                        <StackPanel Orientation="Horizontal">
                             <Label FontSize="15" Content="Attendance : "></Label>
-                            <TextBlock FontSize="15" Text="{Binding ElementName=studentListView.ItemSource, Path=Attendance}"/>
-                        </StackPanel>
-                        <StackPanel>
-                            <Label FontSize="15" Content="Email : "></Label>
-                            <TextBlock FontSize="15" Text="{Binding ElementName=studentListView.ItemSource, Path=Email}"/>
-                        </StackPanel>
-                        <StackPanel>
-                            <Label FontSize="15" Content="Phone : "></Label>
-                            <TextBlock FontSize="15" Text="{Binding ElementName=studentListView.ItemSource, Path=Phone}"/>
-                        </StackPanel>
+                            <TextBlock FontSize="15" Text="{Binding Attendance}"/>
+                   
                     </StackPanel>
+                    <StackPanel Orientation="Vertical">
+ 
+                            <TextBlock FontSize="15" Text="{Binding Email}"/>
+                       
+     
+                            <TextBlock FontSize="15" Text="{Binding Phone}"/>
+                        </StackPanel>
+                        </StackPanel>
+                    
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </Grid>
+       
+ 
 </Window>

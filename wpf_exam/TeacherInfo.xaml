@@ -28,8 +28,7 @@
 
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <TextBox TextAlignment="Center" Name="imagepath" FontSize="18"  Margin="0,50,0,0"></TextBox>
-            <Button Name="changepicture" Background="Coral" Click="changepicture_Click" Margin="80,10,80,26"  Height="36">Change Picture</Button>
+            <Button Name="changepicture" Background="Coral" Click="changepicture_Click" Margin="80,53,80,60"  Height="36">Change Picture</Button>
 
             <TextBox TextAlignment="Center" Name="name" FontSize="18"  Height="34"/>
             <TextBox Name="surname" TextAlignment="Center" FontSize="18" Height="34"/>
@@ -40,7 +39,7 @@
             <TextBox Name="twitter" FontSize="18" TextAlignment="Center" Height="34"/>
             <TextBox Name="linkedin" FontSize="18" TextAlignment="Center"  Height="34"/>
             <TextBox Name="username" FontSize="18" TextAlignment="Center" Height="34"/>
-            <PasswordBox Name="password"  FontSize="18"  Height="34"/>
+            <PasswordBox Name="password" TextBlock.TextAlignment="Center"  FontSize="18"  Height="34"/>
             <Button Name="save" Background="Coral" Click="save_Click" Margin="50,50,50,0" Height="36"> Save All</Button>
         </StackPanel>
     </Grid>

@@ -5,14 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_exam"
         mc:Ignorable="d"
-        Title="TeacherWindow" Height="450" Width="650">
+        Title="TeacherWindow" Height="400" Width="650">
   <StackPanel Orientation="Vertical">
-        <Button Name="changeTheme" Click="changeTheme_Click" Padding="10" Margin="50,30,50,0">Change Theme</Button>
         <Button Name="addStudent" Click="addStudent_Click" Padding="10" Margin="50,30,50,0">Add Student</Button>
         <Button Name="teacherInfo" Click="teacherInfo_Click" Padding="10" Margin="50,30,50,0">Teacher Info</Button>
         <Button Name="students" Click="students_Click" Padding="10" Margin="50,30,50,0"> Students</Button>
         <Button Name="exit" Click="exit_Click" Padding="10" Margin="50,30,50,0">Exit</Button>
-
     </StackPanel>
 </Window>
     <!--teacher info students exit-->

@@ -29,7 +29,7 @@ namespace wpf_exam
         {
              Login.students.Add(new Student { Name = textBlockFirstname.Text, Surname = textBlockLastName.Text,
                  Username=textBlockUsername.Text,
-                 Password = textBlockPassword.Text, Email = textBoxEmail.Text, Adress = textBoxAddress.Text, Photo = "contact.png" });
+                 Password = textBlockPassword.Text, Email = textBoxEmail.Text, Adress = textBoxAddress.Text, Photo = "contact.png" ,AverageMark=0,Badges=0,Coin=0,Crystal=0,Performance=0});
             Close();
         }
     }
