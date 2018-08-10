@@ -40,6 +40,8 @@ namespace wpf_exam
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
+            Group.students[Login.loggedInStudentIndex] = Login.loggedInStudent;
+            
             Close();
         }
     }

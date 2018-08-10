@@ -52,6 +52,7 @@ namespace wpf_exam
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
+            Group.teachers[Login.loggedInTeacherIndex] = Login.loggedInTeacher;
             Close();
         }
     }

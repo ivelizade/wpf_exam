@@ -21,13 +21,13 @@ namespace wpf_exam
     public partial class Login : Window
     {
 
-        static public ObservableCollection<Teacher> teachers { get; set; }
-        static public ObservableCollection<Student> students { get; set; }
+        static public ObservableCollection<Group> Groups { get; set; }
         static public ObservableCollection<HomeWork> homeWorks { get; set; }
         public Login()
         {
             InitializeComponent();
             loginAs.SelectedIndex = 0;
+            
             homeWorks = new ObservableCollection<HomeWork>();
 
             homeWorks.Add(new HomeWork
@@ -59,9 +59,9 @@ namespace wpf_exam
                     TeacherName = "Elnur"
                 }
                 );
-            students = new ObservableCollection<Student>();
-            teachers = new ObservableCollection<Teacher>();
-            students.Add(new Student
+            Group.students = new ObservableCollection<Student>();
+            Group.teachers = new ObservableCollection<Teacher>();
+            Group.students.Add(new Student
             {
                 Name = "Fatime",
                 Surname = "Mirzeyeva",
@@ -74,7 +74,7 @@ namespace wpf_exam
                 GroupName = "2721_AZ",
                 HomeWorks = new ObservableCollection<HomeWork> { homeWorks[0] }
             });
-            students.Add(new Student
+            Group.students.Add(new Student
             {
                 Name = "Fatma",
                 Surname = "Fatehqizi",
@@ -88,7 +88,7 @@ namespace wpf_exam
                 HomeWorks = new ObservableCollection<HomeWork> { homeWorks[1]
             }
             });
-            students.Add
+            Group.students.Add
                 (
                  new Student
                  {
@@ -110,7 +110,7 @@ namespace wpf_exam
                      Crystal = 604
                  }
                 );
-            students.Add
+            Group.students.Add
                 (
                  new Student
                  {
@@ -132,7 +132,7 @@ namespace wpf_exam
                      Crystal = 905
                  }
                 );
-            students.Add
+            Group.students.Add
                 (
                  new Student
                  {
@@ -154,7 +154,7 @@ namespace wpf_exam
                      Crystal = 499
                  }
                 );
-            students.Add
+            Group.students.Add
                 (
                   new Student
                   {
@@ -176,7 +176,7 @@ namespace wpf_exam
                       Crystal = 800
                   }
                 );
-            teachers.Add(new Teacher
+           Group.teachers.Add(new Teacher
             {
                 Name = "Elnur",
                 Surname = "Agabeyli",
@@ -189,11 +189,11 @@ namespace wpf_exam
                 Username = "abc",
                 Password = "123",
                 ImagePath = "contact.png",
-                StudentList = new ObservableCollection<Student> { students[1],
-                students[2],students[3], students[4],students[5]
+                StudentList = new ObservableCollection<Student> { Group.students[1],
+                Group.students[2],Group.students[3], Group.students[4],Group.students[5]
                 }
             });
-            teachers.Add(new Teacher
+            Group.teachers.Add(new Teacher
             {
                 Name = "Eli",
                 Surname = "Mirzeyev",
@@ -206,29 +206,36 @@ namespace wpf_exam
                 Username = "eli",
                 Password = "321",
                 ImagePath = "contact.png",
-                StudentList = new ObservableCollection<Student> { students[0]
+                StudentList = new ObservableCollection<Student> { Group.students[0]
                 }
             });
 
         }
         public static Teacher loggedInTeacher { get; set; }
         public static Student loggedInStudent { get; set; }
+        public static int loggedInTeacherIndex { get; set; }
+        public static int loggedInStudentIndex { get; set; }
         private void login_Click(object sender, RoutedEventArgs e)
         {
             bool success = false;
             if (loginAs.SelectedIndex == 0)
             {
-                foreach (var item in teachers)
+                loggedInTeacherIndex = 0;
+                foreach (var item in Group.teachers)
                 {
+                    
                     if (item.Username.Equals(usertext.Text) && item.Password.Equals(passwordtext.Password))
                     {
                         loggedInTeacher = item;
                         TeacherWindow teacherWindow = new TeacherWindow();
                         teacherWindow.Show();
                         success = true;
-                        
-                    }
 
+                    }
+                    else
+                    {
+                        loggedInTeacherIndex++;
+                    }
 
                 }
                 if (!success)
@@ -240,7 +247,8 @@ namespace wpf_exam
             }
             if (loginAs.SelectedIndex == 1)
             {
-                foreach (var item in students)
+                loggedInStudentIndex = 0;
+                foreach (var item in Group.students)
                 {
                     if (item.Username.Equals(usertext.Text) && item.Password.Equals(passwordtext.Password))
                     {
@@ -250,7 +258,10 @@ namespace wpf_exam
                         studentWindow.Show();
                         success = true;
                     }
-
+                    else
+                    {
+                        loggedInStudentIndex++;
+                    }
 
                 }
                 if (!success)
